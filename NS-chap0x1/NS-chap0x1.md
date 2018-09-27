@@ -25,15 +25,15 @@
   - 控制面板 -> 系统和安全 -> Windows防火墙
 - 网卡配置
   - 只有一块Internal Network网卡
-  - ![](images\victim-netcard.png)
+  - ![](images/victim-netcard.png)
 - IP地址、默认网关、DNS服务器配置
   - 右键点击文件资源管理器右侧“网络” ->  属性
-    - ![](images\victim-ip.png)
-    - ![](images\victim-ip1.png)
-    - ![](images\victim-ip2.png)
-    - ![](images\victim-ip3.png)
+    - ![](images/victim-ip.png)
+    - ![](images/victim-ip1.png)
+    - ![](images/victim-ip2.png)
+    - ![](images/victim-ip3.png)
 - cmd输入ipconfig
-  - ![](images\victim-ipconfig.png)
+  - ![](images/victim-ipconfig.png)
 
 
 
@@ -42,15 +42,15 @@
 - 以root身份执行`apt update && apt upgrade -y && apt dist-upgrade -y` 
 - 网卡配置
   - Internal Network网卡（enp0s8）
-    - ![](images\gateway-netcard1.png)
+    - ![](images/gateway-netcard1.png)
   - NAT Network网卡（enp0s3）
-    - ![](images\gateway-netcard2.png)
+    - ![](images/gateway-netcard2.png)
 - IP地址、默认网关、DNS服务器配置
   - 右上角齿轮 -> 系统设置 -> 网络
-    - ![](images\gateway-ip.png)
-    - ![](images\gateway-ip1.png)
+    - ![](images/gateway-ip.png)
+    - ![](images/gateway-ip1.png)
 - 终端输入ifconfig
-  - ![](images\gateway-ifconfig.png)
+  - ![](images/gateway-ifconfig.png)
 
 
 
@@ -61,12 +61,12 @@
 - 以root身份执行`apt update && apt upgrade -y && apt dist-upgrade -y` 
 - 网卡配置
   - 只有一块NAT Network网卡
-    - ![](images\attacker-netcard.png)
+    - ![](images/attacker-netcard.png)
 - IP地址、默认网关、DNS服务器配置
   - 右键桌面 -> 设置 -> 网络
   - 之后的步骤和gateway的设置相差无几，此处略
 - 终端输入ifconfig
-  - ![](images\attacker-ifconfig.png)
+  - ![](images/attacker-ifconfig.png)
 
 
 
@@ -83,34 +83,34 @@
   - 首先打开端口转发功能，使用`sysctl net.ipv4.ip_forward=1`命令
   - 添加转发规则，使用`iptables -t nat -A POSTROUTING -s 192.168.56.0/24 -o enp0s3 -j MASQUERADE`命令
   - 输入`iptables-save`保存设置
-  - ![](images\gtw-iptables.png)
+  - ![](images/gtw-iptables.png)
   - 设置完成之后，靶机可以ping通攻击者，而攻击者无法ping通靶机，因为网关无法将来自攻击者的包转发给靶机
 
 ### 连通性测试
 
 - 靶机访问攻击者主机
-  - ![](images\vtm-atk.png)
+  - ![](images/vtm-atk.png)
 - 攻击者主机无法直接访问靶机
-  - ![](images\atk-vtm.png)
+  - ![](images/atk-vtm.png)
 - 网关可以直接访问攻击者主机和靶机
-  - ![](images\gtw-vtm-atk.png)
+  - ![](images/gtw-vtm-atk.png)
 - 靶机的所有对外上下行流量必须经过网关
-  - ![](images\vtm-gtw-atk-0.png)
-  - ![](images\vtm-gtw-atk.png)
+  - ![](images/vtm-gtw-atk-0.png)
+  - ![](images/vtm-gtw-atk.png)
 - 所有节点均可以访问互联网
   - 靶机
-    - ![](images\vtm-internet.png)
+    - ![](images/vtm-internet.png)
   - 网关
-    - ![](images\gtw-internet.png)
+    - ![](images/gtw-internet.png)
   - 攻击者
-    - ![](images\attacker-internet.png)
+    - ![](images/attacker-internet.png)
 
 ### 多重加载
 
-- ![](images\vtm-ma.jpg)
-- ![](images\gtw-ma.png)
+- ![](images/vtm-ma.jpg)
+- ![](images/gtw-ma.png)
 
-- ![](images\atk-ma.jpg)
+- ![](images/atk-ma.jpg)
 
 ## 实验遇到的问题
 
