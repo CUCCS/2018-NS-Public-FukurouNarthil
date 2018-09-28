@@ -132,3 +132,12 @@
 
    - 换了一个网络环境之后虚拟机无法上网，报错`name or service not known` ，执行`cat /etc/resolv.conf`发现其中缺少和宿主机相同的DNS服务器，手动添加后可以上网
 
+## 参考资料
+
+- [TheMasterOfMagic]: https://github.com/CUCCS/2018-NS-Public-TheMasterOfMagic/blob/cd50cd367ba0db52601295b686c9d854679283fa/chap0x01/%E5%9F%BA%E4%BA%8EVirtualBox%E7%9A%84%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md
+
+- [jckling]: https://github.com/CUCCS/2018-NS-Public-jckling/blob/70e9a04e20f01db84d7f673f6d2e34b7876c7676/0x01/%E5%9F%BA%E4%BA%8EVirtualBox%E7%9A%84%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md
+
+- [端口转发的配置]: https://askubuntu.com/questions/320121/simple-port-forwarding
+
+  
